@@ -1,5 +1,7 @@
 ---
-python_version: "2.7"
+python_version: "3.9"
+pip_executable: pip3
+ansible_python_interpreter: "/usr/bin/python3"
 root_dir: "/var/www/{{ project_name }}"
 source_dir: "{{ root_dir }}/src"
 venv_dir: "{{ root_dir }}/env"
@@ -35,7 +37,7 @@ uwsgi_ini_path: "{{ root_dir }}/uwsgi.ini"
 project_port: 8000
 app_packages: []
 default_app_packages:
-  - python-pip
+  - python3-pip
   - libpq-dev
   - libev-dev
   - libevent-dev
@@ -55,4 +57,3 @@ default_app_packages:
   - python{{ python_version }}-dev
   - postfix
   - git-core
-  - python-virtualenv
